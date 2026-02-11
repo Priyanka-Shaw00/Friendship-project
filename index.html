@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Friendship</title>
+    <link rel="stylesheet" href="First.css">
+</head>
+<body>
+    <div class="hearts" id="hearts"></div>
+    <div class="centre">
+    <h1 class="typing">Something special for you 🎀</h1>
+    <button id="YesBtn">Open it 💕</button>
+    </div>
+<script>
+    // Generate floating hearts
+    function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDelay = Math.random() * 6 + 's';
+            document.getElementById('hearts').appendChild(heart);
+            setTimeout(() => heart.remove(), 6000);
+        }
+        setInterval(createHeart, 500);
+    document.getElementById("YesBtn").addEventListener("click",function(){
+        window.location.href="next.html"
+    })
+    
+</script>
+</body>
+</html>

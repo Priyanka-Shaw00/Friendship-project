@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Friendship</title>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    body{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url(Background.jpeg) no-repeat center;
+        background-size: cover;
+        position: relative;
+    }
+    .content{
+        width: 80%;
+        max-width: 500px;
+        text-align: center;
+        color: #ad4591;
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 1.8;
+        position: relative;
+        z-index: 2;
+    }
+
+    
+
+    .cursor{
+        display: inline-block;
+        width: 2px;
+        height: 22px;
+        background: #b30059;
+        margin-left: 5px;
+        animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink{
+        0%,50%,100%{opacity: 1;}
+        25%,75%{opacity: 0;}
+    }
+
+    @media(max-width:600px){
+        .content{
+            font-size: 18px;
+        }
+    }
+ 
+</style>
+</head>
+
+<body>
+
+<div class="content">
+    <span id="text"></span><span class="cursor"></span>
+</div>
+
+<script>
+    const lines = [
+        "Our laughs are limitless 😗",
+        "Our memories are countless 🌝",
+        "Our friendship is endless 🤗",
+        "Love you Jaan... ♥️✨"
+    ];
+
+    let lineIndex = 0;
+    let charIndex = 0;
+    const speed = 80;
+    const textElement = document.getElementById("text");
+
+    function typeText(){
+        if(lineIndex < lines.length){
+            if(charIndex < lines[lineIndex].length){
+                textElement.innerHTML += lines[lineIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(typeText, speed);
+            }else{
+                textElement.innerHTML += "<br>";
+                charIndex = 0;
+                lineIndex++;
+                setTimeout(typeText, 600);
+            }
+        }
+    }
+
+    typeText();
+</script>
+
+</body>
+</html>

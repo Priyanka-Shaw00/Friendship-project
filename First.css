@@ -1,0 +1,58 @@
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(First_back.jpeg);
+    background-size: cover;
+    background-position: 50% ;
+    /* background-repeat: no-repeat; */
+    /* background-attachment: fixed; */
+}
+.centre{
+    text-align: center;
+}
+.typing{
+    font-style: oblique;
+    text-align: center;
+    color: rgb(134, 37, 37);
+}
+#YesBtn{
+    background-color: pink;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: rgb(173, 83, 133);
+    font-size: 16px;
+    font-weight: normal;
+    transition: all 0.3s ease;
+}
+#YesBtn:hover{
+    background: palevioletred;
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+.hearts{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+.heart {
+   position: absolute;
+    color: brown;
+    font-size: 2em;
+    animation: float 6s linear infinite;
+}
+@keyframes float {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
